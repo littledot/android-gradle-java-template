@@ -11,7 +11,7 @@ tasks.withType(JavaCompile) {
     configure(options) {
         compilerArgs << '-Xlint:all'        // Turn on all warnings
         compilerArgs << '-Xlint:-options'   // Turn off 'missing' bootclasspath warning
-        compilerArgs << '-Werror'           // Turn warnings into errors
+//        compilerArgs << '-Werror'           // Turn warnings into errors
         compilerArgs << '-Xdiags:verbose'   // Turn on verbose errors
         deprecation = true
         encoding = 'UTF-8'
@@ -59,21 +59,21 @@ apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.2'
-
-    defaultConfig {
-        minSdkVersion 11 // 14
-        targetSdkVersion 23
-        // Espresso test runner
-        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
-    }
-
-    // Use the "ndk-build" tool to build libs
-    sourceSets.main {
-        jni.srcDirs = []
-        jniLibs.srcDir 'src/main/libs'
-    }
+//    compileSdkVersion 23
+//    buildToolsVersion '23.0.2'
+//
+//    defaultConfig {
+//        minSdkVersion 11 // 14
+//        targetSdkVersion 23
+//        // Espresso test runner
+//        testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
+//    }
+//
+//    // Use the "ndk-build" tool to build libs
+//    sourceSets.main {
+//        jni.srcDirs = []
+//        jniLibs.srcDir 'src/main/libs'
+//    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -115,7 +115,7 @@ android {
         textReport true
         textOutput 'stdout'
         checkAllWarnings true
-        warningsAsErrors true
+//        warningsAsErrors true
         disable 'PrivateResource',              // App Compat resources - actionBarSize/colorPrimary
                 'UnusedResources',              // Unused will be removed on release
                 'IconExpectedSize',             // Using the material icons provided from Google
